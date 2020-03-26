@@ -4,9 +4,10 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.states.GameStateManager;
 import com.mygdx.game.states.MenuState;
-import com.mygdx.game.states.PlayState;
 
 public class FlappyBird extends ApplicationAdapter {
 	// Ниже создаются 3 статичные константы. Static означает,
@@ -16,6 +17,8 @@ public class FlappyBird extends ApplicationAdapter {
 	public static final int HEIGHT = 800;
 	public static final String TITLE = "Flappy Bird";
 
+
+	public static Viewport screenPort;
 	private GameStateManager gsm;
 	private SpriteBatch batch; // объект необходимы для отрисовки текстур
 
@@ -32,5 +35,8 @@ public class FlappyBird extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		gsm.update(Gdx.graphics.getDeltaTime());
 		gsm.render(batch);
+
+//		if(Bird.x < 0 ) bird.getPosition() = 0;
+//		if(bird.getPosition() > 800 - 64) bird.getPosition() = 800-64;
 	}
 }
