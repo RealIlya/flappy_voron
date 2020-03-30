@@ -10,7 +10,7 @@ import com.mygdx.game.FlappyBird;
 import com.mygdx.game.tamplate.GameConstants;
 
 public class MenuState extends State {
-
+//    private Texture playBtn;
     private Texture background;
     private Skin mySkin;
     private Stage stage;
@@ -19,6 +19,7 @@ public class MenuState extends State {
     public MenuState(GameStateManager gsm) {
         super(gsm);
         background = new Texture("bg.png");
+//        playBtn = new Texture("skin/playbtn.png");
         mySkin = new Skin(Gdx.files.internal(GameConstants.skin));
         stage = new Stage(FlappyBird.screenPort);
 
@@ -26,10 +27,7 @@ public class MenuState extends State {
         playBtn.setSize(GameConstants.col_width*2, GameConstants.row_height);
         playBtn.setPosition(GameConstants.centerX, GameConstants.centerY);
 
-
         stage.addActor(playBtn);
-
-
     }
 
     @Override
