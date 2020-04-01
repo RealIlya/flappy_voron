@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Tube {
     public static final int FLUCTUATION = 130; // колебание
-    public static final int TUBE_GAP = 100; // расстояние между трубами по вертикали
+    public static final int TUBE_GAP = 110; // расстояние между трубами по вертикали
     public static final int LOWEST_OPENING = 120; // минимальное расстояние между трубами по горизонтали
     public static final int TUBE_WIDTH = 52; // ширина трубы
 

@@ -20,14 +20,14 @@ public class MenuState extends State {
         super(gsm);
         background = new Texture("bg.png");
 //        playBtn = new Texture("skin/playbtn.png");
-        mySkin = new Skin(Gdx.files.internal(GameConstants.skin));
-        stage = new Stage(FlappyBird.screenPort);
+//        mySkin = new Skin(Gdx.files.internal(GameConstants.skin));
+//        stage = new Stage(FlappyBird.screenPort);
 
-        Button playBtn = new Button(mySkin, "small");
-        playBtn.setSize(GameConstants.col_width*2, GameConstants.row_height);
-        playBtn.setPosition(GameConstants.centerX, GameConstants.centerY);
+//        Button playBtn = new Button(mySkin, "small");
+//        playBtn.setSize(GameConstants.col_width*2, GameConstants.row_height);
+//        playBtn.setPosition(GameConstants.centerX, GameConstants.centerY);
 
-        stage.addActor(playBtn);
+//        stage.addActor(playBtn);
     }
 
     @Override

@@ -11,7 +11,7 @@ public class Bird {
     private Texture bird;
     private Rectangle bounds;
 
-    public static final int GRAVITY = -15;
+    public static final int GRAVITY = -25;
     public static final int MOVEMENT = 100;
 
     public Vector3 getPosition() {

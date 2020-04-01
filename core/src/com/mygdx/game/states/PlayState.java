@@ -1,7 +1,9 @@
 package com.mygdx.game.states;
 
+import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Array;
 import com.mygdx.game.FlappyBird;
@@ -66,8 +68,8 @@ public class PlayState extends State {
         // делаем так, чтобы камера при постоянной отрисовки захватывала именно игровое поле
         // и в таком виде она и будет следить за птицей
         sb.setProjectionMatrix(camera.combined);
-
         sb.begin();
+        FlappyBird.font.draw(sb, "ssSSs", 600, 300);
         sb.draw(background, 0, 0, FlappyBird.WIDTH, FlappyBird.HEIGHT);
         sb.draw(background, camera.position.x - camera.viewportWidth/2, 2,
                 FlappyBird.WIDTH, FlappyBird.HEIGHT);

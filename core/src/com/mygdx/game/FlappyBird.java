@@ -3,6 +3,7 @@ package com.mygdx.game;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.states.GameStateManager;
@@ -19,10 +20,12 @@ public class FlappyBird extends ApplicationAdapter {
 
 	private GameStateManager gsm;
 	private SpriteBatch batch; // объект необходимы для отрисовки текстур
+	public static BitmapFont font;
 
 	@Override
 	public void create() {
 		batch = new SpriteBatch();
+		font = new BitmapFont();
 		gsm = new GameStateManager();
 		Gdx.gl.glClearColor(1,0,0,1);
 		gsm.push(new MenuState(gsm));
