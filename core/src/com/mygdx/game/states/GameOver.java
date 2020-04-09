@@ -42,5 +42,6 @@ public class GameOver extends State {
     public void dispose() {
         background.dispose();
         gameover.dispose();
+        System.out.println("GameOver Disposed");
     }
 }

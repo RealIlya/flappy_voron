@@ -10,7 +10,7 @@ import com.mygdx.game.FlappyBird;
 import com.mygdx.game.tamplate.GameConstants;
 
 public class MenuState extends State {
-//    private Texture playBtn;
+    private Texture playBtn;
     private Texture background;
     private Skin mySkin;
     private Stage stage;
@@ -18,8 +18,10 @@ public class MenuState extends State {
 
     public MenuState(GameStateManager gsm) {
         super(gsm);
+        camera.setToOrtho(false, FlappyBird.WIDTH / 2,
+                                        FlappyBird.HEIGHT / 2);
         background = new Texture("bg.png");
-//        playBtn = new Texture("skin/playbtn.png");
+        playBtn = new Texture("skin/playbtn.png");
 //        mySkin = new Skin(Gdx.files.internal(GameConstants.skin));
 //        stage = new Stage(FlappyBird.screenPort);
 
@@ -44,16 +46,17 @@ public class MenuState extends State {
 
     @Override
     public void render(SpriteBatch sb) {
+        sb.setProjectionMatrix(camera.combined);
         sb.begin();
-        sb.draw(background, 0, 0, FlappyBird.WIDTH, FlappyBird.HEIGHT);
-//        sb.draw(playBtn, FlappyBird.WIDTH/2 - playBtn.getWidth()/2,
-//                         FlappyBird.HEIGHT/2 - playBtn.getHeight()/2);
+        sb.draw(background, 0, 0);
+        sb.draw(playBtn, camera.position.x - playBtn.getWidth() / 2, camera.position.y);
         sb.end();
     }
 
     @Override
     public void dispose() {
         background.dispose();
-//        playBtn.dispose();
+        playBtn.dispose();
+        System.out.println("MenuState Disposed");
     }
 }

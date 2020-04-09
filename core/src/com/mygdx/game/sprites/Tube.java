@@ -58,4 +58,9 @@ public class Tube {
         // вернётся значение true, если соприкосновение было или false если не было
         return player_bird.overlaps(boundsTop) || player_bird.overlaps(boundsBot);
     }
+
+    public void dispose() {
+        topTube.dispose();
+        bottomTube.dispose();
+    }
 }
